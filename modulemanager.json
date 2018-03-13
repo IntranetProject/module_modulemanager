@@ -1,5 +1,6 @@
 {
   "name": "Module Manager",
+  "active": true,
   "version": "0.1",
   "priority": "1000",
   "baseperm": "3",
