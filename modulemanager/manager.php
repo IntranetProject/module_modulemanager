@@ -1,16 +1,9 @@
 <?php
-if ($params->update) {
 
-}
-$modulemanager = $db->getModuleByName("Module Manager");
-$id = 0;
-foreach ($db->getModules() as $modd): ?>
-    <?php
-    // update composer:
-    if ($modd->getName() == $params->update) {
-        include("../vendor/autoload.php");
-        
-    }
+if ($params->module) {
+    $modulemanager = $db->getModuleByName("Module Manager");
+    $id = 0;
+    foreach ($db->getModules() as $modd):
     ?>
     <div class="row">
         <div class="col-md-12">
@@ -21,7 +14,7 @@ foreach ($db->getModules() as $modd): ?>
                 <div class="card-content">
                     <ul class="list-group">
                         <a class="btn btn-primary"
-                           href="module.php?module=modulemanager/manager.php&params=update|<?= $modd->getName() ?>"
+                           href="module.php?module=modulemanager/manager.php&params=update|<?= $modd->getName() ?>_pull|1"
                            aria-expanded="false">Update Composer<span
                                     class="caret"></span>
                         </a>
@@ -99,5 +92,13 @@ foreach ($db->getModules() as $modd): ?>
         </div>
     </div>
 <?php
-endforeach;
-?>
+    endforeach;
+    if ($modd->getName() == $params->pull) {
+        include("../vendor/autoload.php");
+        $git = new Cz\Git\GitRepository(__DIR__ . "/../");
+        $result = $repo->pull('origin');
+
+        echo $result;
+    }
+}
+ ?>

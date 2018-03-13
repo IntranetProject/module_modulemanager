@@ -1,5 +1,5 @@
 {
     "require": {
-        "teqneers/php-stream-wrapper-for-git": "^1.0"
+        "czproject/git-php": "^3.13"
     }
 }
