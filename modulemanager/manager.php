@@ -8,21 +8,8 @@ foreach ($db->getModules() as $modd): ?>
     <?php
     // update composer:
     if ($modd->getName() == $params->update) {
-        shell_exec('');
-        echo $modd->getPath() . "/" . $modd->getBasePath();
-        $ar = array();
-        $arK = array();
-        //$output = exec("composer global update -d " . $modd->getPath() . "/" . $modd->getBasePath() . " 2>&1", $ar, $arK);
-        $output = system("su - pi <<! >/dev/null 2>&1
-Jannosch353
-composer global update -d " . $modd->getPath() . "/" . $modd->getBasePath() . " 2>&1
-!", $ar);
-        echo "<pre>";
-        foreach ($ar as $line) {
-            echo $output;
-            echo $line;
-        }
-        echo "</pre>";
+        include("../vendor/autoload.php");
+        
     }
     ?>
     <div class="row">
