@@ -1,7 +1,5 @@
 <?php
 
-if ($params->module) {
-    $modulemanager = $db->getModuleByName("Module Manager");
     $id = 0;
     foreach ($db->getModules() as $modd):
     ?>
@@ -95,10 +93,9 @@ if ($params->module) {
     endforeach;
     if ($modd->getName() == $params->pull) {
         include("../vendor/autoload.php");
-        $git = new Cz\Git\GitRepository(__DIR__ . "/../");
+        $git = new Cz\Git\GitRepository(__DIR__ . "/../module_balance");
         $result = $repo->pull('origin');
 
         echo $result;
     }
-}
  ?>
