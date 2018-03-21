@@ -1,11 +1,13 @@
 {
   "name": "Module Manager",
-  "active": false,
+  "active": true,
   "version": "0.1",
   "priority": "1000",
   "baseperm": "3",
   "repository": "https://github.com/bennetgallein/module_modulemanager.git",
   "basepath": "modulemanager/",
+  "languagefiles": "languages/",
+  "language": "en",
   "authors": [
     {
       "name": "Bennet Gallein",
@@ -19,7 +21,7 @@
   "navs": [
     {
       "icon": "settings",
-      "name": "Module Manager",
+      "name": "__NAV_MANAGER",
       "link": "manager.php",
       "permission": "3",
       "type": "nav"

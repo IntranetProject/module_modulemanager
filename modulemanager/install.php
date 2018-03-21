@@ -1,12 +1,9 @@
 <?php
-// install modules from a GitHub repository link should be made easy from here
+use Gitlab\Client;
 
-include("vendor/autoload.php");
+$v = include($module->getPath() . "/" . $module->getBasepath() . "../vendor/autoload.php");
 
-$string = "bennetgallein/modulemanager";
+$client = Client::create('http://gitlab.com')->authenticate('2Ssqs99RcxfWtawBocbX', \Gitlab\Client::AUTH_URL_TOKEN);
 
-$string = explode("/", $string);
-
-$client = new \Github\Client();
-$readme = $client->api('repo')->contents()->readme('bennetgallein', 'PaladinsPHP', $client);
-echo base64_decode($readme['content']);
+$project = $client->api('projects');
+echo "<pre>" . var_dump($project) . "</pre>";

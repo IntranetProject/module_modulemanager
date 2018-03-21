@@ -3,7 +3,6 @@
     "description": "The Modulemanager for our KSI",
     "type": "project",
     "require": {
-        "knplabs/github-api": "^2.7",
         "php-http/guzzle6-adapter": "^1.1"
     },
     "authors": [
