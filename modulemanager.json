@@ -1,6 +1,6 @@
 {
   "name": "Module Manager",
-  "active": true,
+  "active": false,
   "version": "0.1",
   "priority": "1000",
   "baseperm": "3",
