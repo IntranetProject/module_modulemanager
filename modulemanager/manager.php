@@ -3,9 +3,8 @@
     $id = 0;
     foreach ($db->getModules() as $modd):
     ?>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
+    <div class="row col-md-10 offset-md-1 mt-3 bg-light">
+            <div class="card col-md-12 bg-light">
                 <div class="card-header" data-background-color="<?= $db->getConfig()['color'] ?>">
                     <h4 class="title">Info about <?= $modd->getName() ?></h4>
                 </div>
